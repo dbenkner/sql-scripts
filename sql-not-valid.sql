@@ -5,4 +5,7 @@ To be valid, PaymentDate must be a null value if there’s a balance due and a n
 
 select *
 from Invoices
-where (PaymentDate is null and (InvoiceTotal - PaymentTotal - creditTotal <= 0)) or (PaymentDate is not null and (InvoiceTotal - PaymentTotal - CreditTotal >0) );
+where 
+    (PaymentDate is null and (InvoiceTotal - PaymentTotal - creditTotal <= 0)) 
+    or 
+    (PaymentDate is not null and (InvoiceTotal - PaymentTotal - CreditTotal >0) );
