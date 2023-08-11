@@ -5,5 +5,5 @@ Modify the solution to exercise 3 to filter for contacts whose last name begins 
 
 select VendorContactLName + ', ' + VendorContactFName as 'Full Name'
 from vendors
-WHERE VendorContactLName like 'A%' or VendorContactLName like 'B%' or VendorContactLName like 'C%' or VendorContactLName like 'E%'
+WHERE VendorContactLName like '[a-c,e]%'
 order by VendorContactLName, VendorContactFName;
