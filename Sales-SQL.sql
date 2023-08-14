@@ -6,6 +6,5 @@ join OrderLines ol
     on o.id = ol.ordersID
 where sales > 50000
 group by c.name
-
-select product, quantity, price, ordersID
-from orderlines
+having count(*) > 1
+order by NumOfOrders desc

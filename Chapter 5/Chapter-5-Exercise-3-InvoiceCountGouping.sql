@@ -4,7 +4,7 @@ InvoiceCount is the count of the number of invoices, and InvoiceSum is the sum o
 Sort the result set so the vendor with the highest number of invoices appears first.
 */
 
-select v.VendorName, count(i.vendorID) InvoiceCount, sum(i.InvoiceTotal) InvoiceSum
+select v.VendorName, count(*) InvoiceCount, sum(i.InvoiceTotal) InvoiceSum
 from vendors v
 join Invoices I
     on v.vendorID = i.VendorID
