@@ -8,5 +8,5 @@ from Invoices
 where PaymentTotal > (
     select avg(PaymentTotal)
     from Invoices
-    where InvoiceTotal - paymentTotal - CreditTotal = -
+    where InvoiceTotal - paymentTotal - CreditTotal = 0
 );
