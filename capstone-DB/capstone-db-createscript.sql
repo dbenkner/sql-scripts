@@ -58,7 +58,7 @@ CREATE TABLE RequestLines (
     Id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
     RequestId int FOREIGN KEY REFERENCES Requests(ID) not null,
     ProductId int FOREIGN KEY REFERENCES Products(ID) not null,
-    Quantity int DEFAULT 1 not NULL check (Quantity > 1)
+    Quantity int DEFAULT 1 not NULL check (Quantity >= 1)
 );
 
 -- Adding table values
@@ -67,7 +67,7 @@ VALUES
     ('dbenkner', 'Baseball2', 'David', 'Benkner', '5133731765', 'd.benkner@gmail.com', 1, 1),
     ('gdoud', 'Password123', 'Greg', 'Doud', '5133895499', 'gdoud@gmail.com', 1,1),
     ('hhill', 'PropaneMan1', 'Hank', 'Hill', '4894545434', 'propanehill@aol.com', 1, 0),
-    ('hsimpson', 'Mmmmmdonus', 'Homer', 'Simpson', '1235553226', 'donutsandbeer@sprongfieldonline.net', 1, 0),
+    ('hsimpson', 'Mmmmmdonuts', 'Homer', 'Simpson', '1235553226', 'donutsandbeer@sprongfieldonline.net', 1, 0),
     ('tphillips', 'DestroyMerryweather', 'Trevor', 'Phillips', '4205551337', 'tphillips42069@yahoo.com', 0, 0),
     ('bhill', 'Fruitpies123', 'Bobby', 'Hill', '5555553421', 'bobhill123@gmail.com', 1, 0),
     ('nflanders', 'Icantitsageo', 'Ned', 'Flanders', '5335553221', 'nedlovesjesus@jesus.com', 0, 0),
@@ -98,9 +98,25 @@ VALUES
     ('AS-R-4090', 'Asus Rog Strix RTX 4090', 1449.99, '1 Card', 'Asus4090.jpg', 1),
     ('DLL-3040', 'Dell Optiplex 3070', 599.99, '1 CPU', 'Dell3070.png', 4),
     ('MBP15', 'MacBook Pro 15inch', 2999.99, '1 Laptop', 'MacbookPro.jpg', 2),
-    ('D242353233', '24 inch montior', 99.99, '1 Monitor', null, 4)
+    ('D242353233', '24 inch montior', 99.99, '1 Monitor', null, 4),
+    ('IntI73700K', 'Intel I7 13700k', 359.95, '1 CPU', 'i7.jpg', 11)
     ;
 
     select * from products;
 
 Select * from users;
+select * from Requests;
+INSERT Requests ([Description], Justification, RejectionReason, DelieveryMode, [Status], Total, UserId)
+VALUES 
+    ('PC Parts', 'Repairs', null, default, default, 359.95, 1),
+    ('Laptop', 'Upgrade', null, default, default, 1999.99, 3),
+    ('Office Supplies', 'Replinish Supples', null, default, default, 24.54, 3),
+    ('Montiors', 'Replacement', null, default, DEFAULT, 99.95, 4);
+INSERT RequestLines (RequestId, ProductId, Quantity)
+VALUES
+    (1, 8, 1),
+    (4, 7, 1),
+    (3, 2, 1),
+    (3, 2, 3);
+sELECT * FROM Requests;
+SELECT * FROM RequestLines;
