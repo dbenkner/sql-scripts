@@ -81,7 +81,6 @@ VALUES
     ('Github Assesment', 100, 2, 1),
     ('Github Assesment', 50, 4, 1),
     ('Github Assesment', 110, 5, 1)
-*/
 
 select s.Firstname + ' ' + s.lastname as StudentName, a.assesmentname, a. assesmentgrade, t.Name TechnologyName
 from students s
@@ -89,4 +88,9 @@ join ASSESMENTS a
     on s.id = a.StudentID 
 join technologies t
     on a.technologiesID = t.id
+
+Indexes
+
+CREATE INDEX IDX_Lastname on Students (Lastname asc);
+*/
 
