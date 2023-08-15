@@ -90,7 +90,10 @@ join technologies t
     on a.technologiesID = t.id
 
 Indexes
-
 CREATE INDEX IDX_Lastname on Students (Lastname asc);
+
+
+drop index IDX_LastName on students;
+
 */
 

@@ -1,9 +1,3 @@
-BEGIN TRY
-
-END TRY
-BEGIN CATCH
-
-END CATCH
 
 
 /*
