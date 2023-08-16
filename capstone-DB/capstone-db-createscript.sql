@@ -99,7 +99,11 @@ VALUES
     ('DLL-3040', 'Dell Optiplex 3070', 599.99, '1 CPU', 'Dell3070.png', 4),
     ('MBP15', 'MacBook Pro 15inch', 2999.99, '1 Laptop', 'MacbookPro.jpg', 2),
     ('D242353233', '24 inch montior', 99.99, '1 Monitor', null, 4),
-    ('IntI73700K', 'Intel I7 13700k', 359.95, '1 CPU', 'i7.jpg', 11)
+    ('IntI713700K', 'Intel I7 13700k', 359.95, '1 CPU', 'i7.jpg', 11),
+    ('IntI513500k', 'Intel i5 13500k', 249.95, 'CPU',' i5.jpg', 11),
+    ('McLTKB1000', 'Logitech Keyboard', 19.99, '1 Keyboard', null, 11),
+    ('Tnr1200', 'Toner', 79.95, '1 Box', 'Toner.png', 11),
+    ('MBPAir', 'MacBook Air', 1299.99, '1 Laptop', 'MacBookAir.jpg', 2)
     ;
 
     select * from products;

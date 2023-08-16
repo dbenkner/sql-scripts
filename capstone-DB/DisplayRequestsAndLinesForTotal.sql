@@ -1,11 +1,15 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE OR ALTER PROCEDURE DisplayRequestAndLinesForTotal
     @RequestID int = NULL
 AS 
 BEGIN
 
-    IF @RequestID is null
+    IF @RequestID is null OR @RequestID <= 0
     BEGIN
-        PRINT '@RequestID must be an integer!'
+        PRINT '@RequestID must be an integer greater than 0!'
         RETURN
     END
 
@@ -18,5 +22,5 @@ BEGIN
 
 END
 GO
-exec DisplayRequestAndLinesForTotal @RequestID = 1
+exec DisplayRequestAndLinesForTotal;
 GO
